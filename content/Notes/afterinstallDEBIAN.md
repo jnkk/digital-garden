@@ -3,35 +3,44 @@ title: Steps after installing Debian 12
 tags: index
 ---
 
-
 # This is for Debian 12, if another reinstall is needed
 
-## change sourcelist. make a backup of the original file and copy and paste in /etc/apt 
+## Change sources.list make a backup of the original file and copy and paste in /etc/apt
 
-> [!]IMPORTANT
-> Make sure to backup first and then edit the files
+> [!IMPORTANT]
+> Make sure to backup first and then edit the files  
+> Changing the sources.list is adding `contrib` and `non-free`
 
 ```txt
-deb http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware  
-deb-src http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware  
+deb http://deb.debian.org/debian bookworm main non-free-firmware contrib non-free
+deb-src http://deb.debian.org/debian bookworm main non-free-firmware contrib non-free
 
-deb http://deb.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware  
-deb-src http://deb.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware  
+deb http://deb.debian.org/debian-security bookworm-security main  non-free-firmware contrib non-free
+deb-src http://deb.debian.org/debian-security bookworm-security main non-free-firmware contrib non-free
 
-deb http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware  
-deb-src http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware  
+deb http://deb.debian.org/debian bookworm-updates main non-free-firmware contrib non-free
+deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware contrib non-free
 ```
 
 ## post debian 12 install to download
 
 ```bash
 sudo apt install curl wget git micro btop build-essential cmake gcc brew vscodium nvidia-tesla-470-driver npm nodejs
-```  
+```
 
-> [!]NOTE
+> [!NOTE]
 > current setup is using a dell laptop that has a old nvidia  
 > use-> nvidia-tesla-470-driver  
 > nvidia-detect
+
+## Determinate Systems' NIX install
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+They really have a good [blog post](https://determinate.systems/posts/determinate-nix-installer/) on how to do it.
+Still learning on how to use nix as the main config/dotfile management.
 
 ## Install homebrew
 
@@ -51,7 +60,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 ### Install [xdg-ninja](https://github.com/b3nj5m1n/xdg-ninja)
 
-> []NOTE:
+> [!NOTE]
 > This is after installing the xdg-ninja
 
 ```bash
@@ -63,38 +72,40 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 ## How to download and make use of personal notes
 
-1. set your git username and email
+- Set your git username and email
 
 ```bash
 git config --global user.name "<yourusername>"
 git config --global user.email "<youruseremail>"
 ```
 
-2. create ssh-key
+- Create ssh-key
 
 ```bash
 ssh-keygen -t rsa
 ```
 
-> [!]NOTE  
-> using SUDO goes to the root user.
+> [!IMPORTANT]  
+> Do not use the command SUDO; goes to the root and not the $USER.
 
-3. add ssh key to [github](https://github.com/settings/keys)  
+- Add ssh key to [github](https://github.com/settings/keys)
 
-4. download the GIT version and not the https. so the git push command works.
-
+- Download the GIT version and not the https. so the git push command works.
 
 ## other must to install not with apt
 
-go rust cloudflare-warp speedtest-cli fast-cli ollama
+> [!NOTE]
+> Other than [ollama](https://ollama.com/download), they have their own gpg and or ppa to install.
 
-## apps using BREW  
+rust cloudflare-warp speedtest-cli fast-cli ollama
 
-lazygit ruff npm nodejs
+## apps using BREW
+
+go lazygit ruff npm nodejs gleam
 
 ## Install [NERDFONTS](https://github.com/ryanoasis/nerd-fonts)
 
-Jetbrains
+Jetbrainsmono
 
 ## install miniconda for shell-gpt
 
@@ -113,6 +124,7 @@ git diff | sgpt "Generate git commit message, for my changes"
 takes over 10 seconds with current setup. OLD LAPTOP.
 
 ## best terminal by far is [FISH](https://fishshell.com/)
+
 have to learn it.
 if fish is set up. type this:
 
@@ -121,6 +133,7 @@ fish_config theme choose Tomorrow
 ```
 
 ## tutorial for installing QEMU/KVM
+
 [youtube](https://www.youtube.com/watch?v=GgAQw08zJzs)
 or go to [chatgpt](https://chatgpt.com/)/[perplexity](https://www.perplexity.ai/)
 
