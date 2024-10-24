@@ -2,10 +2,11 @@
 title: Text editors and IDEs
 ---
 
-# VSCode for VSCodium, since there is no sync  
+# VSCode for VSCodium, since there is no sync
 
 Extentions:
-1. learn-markdown  
+
+1. Learn-markdown
 2. Catppuccin for themes
 3. Prettier
 4. Gitlens ????? I don't know how to use this. Mainly using lazygit in the terminal.

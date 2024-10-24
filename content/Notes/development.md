@@ -1,8 +1,14 @@
 ---
-title: Jekyll Using Org Mode
+title: Dev Steps
 ---
 
-# Jekyll using org mode
+# Setting up and installing dev tools for learning
+
+## Using Homebrew
+
+```bash
+brew install asdf ruff  
+```
 
 This is my attempt to try make custom Jekyll to look like [Tom Critchlow's Wiki](https://tomcritchlow.com/).
 
