@@ -9,7 +9,7 @@ tags: index
 
 > [!IMPORTANT]
 > Make sure to backup first and then edit the files  
-> Changing the sources.list is adding `contrib` and `non-free`
+> Changing the sources.list in `/etc/apt/` is adding `contrib` and `non-free`
 
 ```txt
 deb http://deb.debian.org/debian bookworm main non-free-firmware contrib non-free
@@ -25,7 +25,7 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware con
 ## post debian 12 install to download
 
 ```bash
-sudo apt install curl wget git micro btop build-essential cmake gcc brew vscodium nvidia-tesla-470-driver npm nodejs
+sudo apt install curl wget git micro btop build-essential cmake gcc
 ```
 
 > [!NOTE]
@@ -42,10 +42,31 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 They really have a good [blog post](https://determinate.systems/posts/determinate-nix-installer/) on how to do it.
 Still learning on how to use nix as the main config/dotfile management.
 
+### Configurations
+
+1. Make the `config/home-manager` folder
+2. Change the directory to `home-manager` folder, run this command:
+```bash
+nix run home-manager -- init --switch .
+```
+3. Remove those files, it is used for init the home-manager
+4. Clone your [home-manager repo](https://github.com/jnkk/debian-nix-home-manager)
+5. Install Devbox
+```bash
+curl -fsSL https://get.jetify.com/devbox | bash
+```
+
+
 ## Install homebrew
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Things to install in Homebrew
+
+```bash
+brew install gcc node lazygit
 ```
 
 ## Setup XDG BASE DIR
@@ -82,7 +103,7 @@ git config --global user.email "<youruseremail>"
 - Create ssh-key
 
 ```bash
-ssh-keygen -t rsa
+ssh-keygen -t ed25519
 ```
 
 > [!IMPORTANT]  
@@ -94,20 +115,27 @@ ssh-keygen -t rsa
 
 ## other must to install not with apt
 
-> [!NOTE]
-> Other than [ollama](https://ollama.com/download), they have their own gpg and or ppa to install.
+### Install [NERDFONTS](https://www.nerdfonts.com/)
 
-rust cloudflare-warp speedtest-cli fast-cli ollama
+### Jetbrainsmono installation
 
-## apps using BREW
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
+```
 
-go lazygit ruff npm nodejs gleam
+### Install Cloudflare-warp
+Run these command. ONE BY ONE  
+[Cloudflare Website](https://developers.cloudflare.com/warp-client/get-started/linux/)
 
-## Install [NERDFONTS](https://github.com/ryanoasis/nerd-fonts)
+```bash
+curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
 
-Jetbrainsmono
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
 
-## install miniconda for shell-gpt
+sudo apt update && sudo apt install cloudflare-warp
+```
+
+### install miniconda for shell-gpt
 
 [miniconda](https://docs.anaconda.com/miniconda/miniconda-install/)  
 Make sure to download sh their file. use bash command to install those.
@@ -123,7 +151,7 @@ git diff | sgpt "Generate git commit message, for my changes"
 
 takes over 10 seconds with current setup. OLD LAPTOP.
 
-## best terminal by far is [FISH](https://fishshell.com/)
+### Best terminal by far is [FISH](https://fishshell.com/)
 
 have to learn it.
 if fish is set up. type this:
@@ -132,7 +160,7 @@ if fish is set up. type this:
 fish_config theme choose Tomorrow
 ```
 
-## tutorial for installing QEMU/KVM
+### tutorial for installing QEMU/KVM
 
 [youtube](https://www.youtube.com/watch?v=GgAQw08zJzs)
 or go to [chatgpt](https://chatgpt.com/)/[perplexity](https://www.perplexity.ai/)
