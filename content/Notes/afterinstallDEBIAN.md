@@ -135,6 +135,12 @@ curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmo
 echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
 
 sudo apt update && sudo apt install cloudflare-warp
+
+warp-cli registration new
+
+warp-cli connect
+
+# Run 'curl https://www.cloudflare.com/cdn-cgi/trace/' and verify that 'warp=on'.
 ```
 
 ### install miniconda for shell-gpt
