@@ -25,7 +25,7 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware con
 ## post debian 12 install to download
 
 ```bash
-sudo apt install curl wget git micro btop build-essential cmake gcc
+sudo apt install curl wget git micro btop build-essential cmake gcc make clang
 ```
 
 > [!NOTE]
