@@ -25,7 +25,7 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware con
 ## post debian 12 install to download
 
 ```bash
-sudo apt install curl wget git micro btop build-essential cmake gcc make clang
+sudo apt install curl wget git micro btop build-essential cmake gcc make clang pandoc zlib1g-dev libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 autoconf automake libncurses5-dev libssl-dev libwxgtk3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop default-jdk inotify-tools
 ```
 
 > [!NOTE]
@@ -33,7 +33,20 @@ sudo apt install curl wget git micro btop build-essential cmake gcc make clang
 > use-> nvidia-tesla-470-driver  
 > nvidia-detect
 
-## Determinate Systems' NIX install
+## Install rust
+
+## Use [mise](https://mise.jdx.dev/)
+
+## Or use asdf instead of Nix for dev deps
+
+[asdf](https://github.com/asdf-vm/asdf) maybe simpler for beginner dev.  
+[asdf website and documentations](https://asdf-vm.com/)
+[asdf plugins](https://github.com/asdf-vm/asdf-plugins), plugins means the "language repo".
+
+Install `Nodejs`, `npm`, `pnpm`, [`elixir language`](https://elixir-lang.org/install.html#gnulinux), [`asdf-elixir`](https://github.com/asdf-vm/asdf-elixir), [`asdf-erlang`](https://github.com/asdf-vm/asdf-erlang)
+
+
+### Determinate Systems' NIX install
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
@@ -56,22 +69,7 @@ nix run home-manager -- init --switch .
 curl -fsSL https://get.jetify.com/devbox | bash
 ```
 
-
-
-
-## Install homebrew
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-### Things to install in Homebrew
-
-```bash
-brew install gcc node lazygit
-```
-
-## Setup XDG BASE DIR
+## Setup XDG BASE DIR TO .BASHRC
 
 ```bash
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -124,6 +122,7 @@ ssh-keygen -t ed25519
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 ```
+Restart the terminal, it should be installed.  
 
 ### Install Cloudflare-warp
 Run these command. ONE BY ONE  
@@ -143,22 +142,6 @@ warp-cli connect
 # Run 'curl https://www.cloudflare.com/cdn-cgi/trace/' and verify that 'warp=on'.
 ```
 
-### install miniconda for shell-gpt
-
-[miniconda](https://docs.anaconda.com/miniconda/miniconda-install/)  
-Make sure to download sh their file. use bash command to install those.
-last time I tried their failed because of the agreements.
-
-[Shell-gpt guide](https://github.com/TheR1D/shell_gpt/wiki/Ollama) is here
-
-Run this if [shell-gpt](https://github.com/TheR1D/shell_gpt) is installed globally
-
-```bash
-git diff | sgpt "Generate git commit message, for my changes"
-```
-
-takes over 10 seconds with current setup. OLD LAPTOP.
-
 ### Best terminal by far is [FISH](https://fishshell.com/)
 
 have to learn it.
@@ -174,3 +157,20 @@ fish_config theme choose Tomorrow
 or go to [chatgpt](https://chatgpt.com/)/[perplexity](https://www.perplexity.ai/)
 
 "how to install qemu/kvm on debian 12"
+
+#### install miniconda for shell-gpt
+
+[miniconda](https://docs.anaconda.com/miniconda/miniconda-install/)  
+Make sure to download sh their file. use bash command to install those.
+last time I tried their failed because of the agreements.
+
+[Shell-gpt guide](https://github.com/TheR1D/shell_gpt/wiki/Ollama) is here
+
+Run this if [shell-gpt](https://github.com/TheR1D/shell_gpt) is installed globally
+
+```bash
+git diff | sgpt "Generate git commit message, for my changes"
+```
+
+takes over 10 seconds with current setup. OLD LAPTOP.
+
