@@ -1,3 +1,5 @@
+# Moved to dedicated [repo](https://github.com/jnkk/bashalias)
+
 alias vi='nvim'
 alias vim='nvim'
 alias lsa='ls -al'
