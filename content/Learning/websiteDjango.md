@@ -1,23 +1,23 @@
 ---
-title: Making a Website (or learning in general)
-tags: 
+title: Making a Website (or learning in general. Mainly using Django)
+tags:
 ---
 
-# Fullstack
+# Fullstack Using Django
 
 Before anything, designing the frontend. And it is not easy. Adding tailwindcss is kinda confusing, but atleast shown where you put it.  
 Managing where you put where is the hard stuff.
 Kinda understand why companies employ web developers. And this just the basic of html. Like "click here to page 2" is something.
 
 Using [penpot](https://penpot.app/) in a docker is a start. A free and self-hosted Figma alternative. But that's later down the line.  
-At least functioning not so looking web is a start. Since I am the only user. 
+At least functioning not so looking web is a start. Since I am the only user.
 
 Using Django is not really for beginners, but starting to get the hang of it. Tried FastHTML which is far more confusing.
 Since I dont know what I dont know.  
-Maybe it is a way to learn the python programming language. "All in one" programming language.  
+Maybe it is a way to learn the python programming language. "All in one" programming language.
 
 Added nix for my dev enviorentment, docker for database stuff so not installed locally which can break stuff.  
-I hope not to break the OS.  
+I hope not to break the OS.
 
 Since I am dreaming a lot of things that can be written in python. Just a matter of assembling and make it work.
 
@@ -37,7 +37,7 @@ graph TD
 
 ##### Docker Compose File
 
-Getting a head for my self, since I know I will need this:  
+Getting a head for my self, since I know I will need this:
 
 ```python
 DATABASES = {
@@ -51,12 +51,13 @@ DATABASES = {
     }
 }
 ```
+
 ```
 version: '3.8'
 
 services:
   db:
-    image: postgres:17 
+    image: postgres:17
     container_name: postgres_db
     environment:
       POSTGRES_USER: postgres
