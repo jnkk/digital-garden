@@ -20,7 +20,8 @@ graph TD
 graph TD
   ISP-->ISPRouter
   ISPRouter-->SwitchTop
-  SwitchTop-->Server/NAS
+  SwitchTop-->Proxmox/Server/NAS
+  Proxmox/Server/NAS<-->Main-PC
   SwitchTop-->Main-PC
   SwitchTop-->WifiTop
   SwitchTop-->SwitchBottom
@@ -36,12 +37,12 @@ graph TD
   ISP1-->Proxmox
   ISP2-->Proxmox
   Proxmox-->SwitchTop
-  Proxmox-->Server
   Proxmox-->NAS
-  SwitchTop-->Main-PC
+  Proxmox-->Main-PC
   SwitchTop-->SwitchBottom
   SwitchBottom-->BottomWifi
   SwitchBottom-->PC/MiniPC
   SwitchBottom-->CCTV
+  SwitchBottom-->Dining
   PC/MiniPC-->TV
 ```
