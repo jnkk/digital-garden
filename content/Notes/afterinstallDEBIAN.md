@@ -8,7 +8,7 @@ tags: index
 ## Change sources.list make a backup of the original file and copy and paste in /etc/apt
 
 > [!IMPORTANT]
-> Make sure to backup first and then edit the files  
+> Make sure to backup first and then edit the files
 > Changing the sources.list in `/etc/apt/` is adding `contrib` and `non-free`
 
 ```txt
@@ -25,12 +25,12 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware con
 ## post debian 12 install to download
 
 ```bash
-sudo apt install curl wget git micro btop build-essential cmake gcc make clang pandoc zlib1g-dev libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 autoconf automake libncurses5-dev libssl-dev libwxgtk3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop default-jdk inotify-tools libyaml-dev rlwrap ripgrep papirus-icon-theme numix-icon-theme tango-icon-theme numix-icon-theme-circle arc-theme libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafont-gothic fonts-unfonts-core fonts-unfonts-extra
+sudo apt install curl wget git micro btop build-essential cmake gcc make clang pandoc zlib1g-dev libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 autoconf automake libncurses5-dev libssl-dev libwxgtk3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop default-jdk inotify-tools libyaml-dev rlwrap ripgrep papirus-icon-theme numix-icon-theme tango-icon-theme numix-icon-theme-circle arc-theme libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafont-gothic fonts-unfonts-core fonts-unfonts-extra bison flex fonts-tlwg-garuda
 ```
 
 > [!NOTE]
-> current setup is using a dell laptop that has a old nvidia  
-> use-> nvidia-tesla-470-driver  
+> current setup is using a dell laptop that has a old nvidia
+> use-> nvidia-tesla-470-driver
 > nvidia-detect
 
 ## Install rust
@@ -39,7 +39,7 @@ sudo apt install curl wget git micro btop build-essential cmake gcc make clang p
 
 ## Or use asdf instead of Nix for dev deps
 
-[asdf](https://github.com/asdf-vm/asdf) maybe simpler for beginner dev.  
+[asdf](https://github.com/asdf-vm/asdf) maybe simpler for beginner dev.
 [asdf website and documentations](https://asdf-vm.com/)
 [asdf plugins](https://github.com/asdf-vm/asdf-plugins), plugins means the "language repo".
 
@@ -106,7 +106,7 @@ git config --global user.email "<youruseremail>"
 ssh-keygen -t ed25519
 ```
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Do not use the command SUDO; goes to the root and not the $USER.
 
 - Add ssh key to [github](https://github.com/settings/keys)
@@ -122,10 +122,10 @@ ssh-keygen -t ed25519
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 ```
-Restart the terminal, it should be installed.  
+Restart the terminal, it should be installed.
 
 ### Install Cloudflare-warp
-Run these command. ONE BY ONE  
+Run these command. ONE BY ONE
 [Cloudflare Website](https://developers.cloudflare.com/warp-client/get-started/linux/)
 
 ```bash
@@ -160,7 +160,7 @@ or go to [chatgpt](https://chatgpt.com/)/[perplexity](https://www.perplexity.ai/
 
 #### install miniconda for shell-gpt
 
-[miniconda](https://docs.anaconda.com/miniconda/miniconda-install/)  
+[miniconda](https://docs.anaconda.com/miniconda/miniconda-install/)
 Make sure to download sh their file. use bash command to install those.
 last time I tried their failed because of the agreements.
 
@@ -173,4 +173,3 @@ git diff | sgpt "Generate git commit message, for my changes"
 ```
 
 takes over 10 seconds with current setup. OLD LAPTOP.
-

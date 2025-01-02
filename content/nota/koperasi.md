@@ -14,7 +14,9 @@ Badan koperasi:
 
 - ketua
   - bisa berupa semacam Dewan Direksi (board of directors)
+- penanggung jawab
 - anggota
+- "hierarki perusahaan koperasi"
 
 Keuangan koperasi:
 
@@ -32,9 +34,21 @@ Program koperasi:
 
 - Modernisasi
 
+Pendapatan koperasi:  
+\*ada tier gratis dengan keterbatasan dan berbayar
+
+- SaaS\*
+- PaaS\*
+
+Nilai koperasi:
+Nilai-nilai fundamental antara lain menolong diri
+sendiri (self help), tanggung jawab sendiri (self-responsibility), demokrasi (democracy),
+persamaan (equality), keadilan (equity), dan solidaritas (solidarity) dan federasi (federated).
+
 ## Penggunaan Git
 
 [Git versi Indonesia](https://id.wikipedia.org/wiki/Git)  
-[Git versi Inggris](https://en.wikipedia.org/wiki/Git)
+[Git versi Inggris](https://en.wikipedia.org/wiki/Git)  
+[Forgejo](https://forgejo.org/) <- open source, copyleft
 
 Bisa menggunakan perangkat lunak (software) diatas untuk bagian "penanggung jawaban" karena terdapat `git blame`, tetapi terlalu teknis. Jadi sulit untuk dipahami secara publik.
