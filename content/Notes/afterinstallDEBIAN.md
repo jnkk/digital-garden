@@ -37,7 +37,7 @@ sudo apt install curl wget git micro btop build-essential cmake gcc make clang p
 
 ## Use [mise](https://mise.jdx.dev/)
 
-## Or use asdf instead of Nix for dev deps
+### Or use asdf instead of Nix for dev deps
 
 [asdf](https://github.com/asdf-vm/asdf) maybe simpler for beginner dev.
 [asdf website and documentations](https://asdf-vm.com/)
@@ -158,7 +158,7 @@ or go to [chatgpt](https://chatgpt.com/)/[perplexity](https://www.perplexity.ai/
 
 "how to install qemu/kvm on debian 12"
 
-#### install miniconda for shell-gpt
+##### install miniconda for shell-gpt
 
 [miniconda](https://docs.anaconda.com/miniconda/miniconda-install/)
 Make sure to download sh their file. use bash command to install those.
